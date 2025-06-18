@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   
-  <groupId>in.RAHAM</groupId>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>Pak.Sajjad</groupId>
   <artifactId>NETFLIX</artifactId>
-  <packaging>war</packaging>
   <version>1.2.2</version>
+  <packaging>war</packaging>
+
   <name>Java Home myweb</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <docker.image.prefix>kammana</docker.image.prefix>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+    <docker.image.prefix>kammana</docker.image.prefix>
   </properties>
 
   <dependencies>
@@ -25,8 +27,7 @@
       <artifactId>bedrock-runtime-maven</artifactId>
       <version>5.1.2</version>
     </dependency>
-    
-    <!-- Updated JUnit to 4.x -->
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -37,21 +38,23 @@
 
   <build>
     <plugins>
-      <!-- Modern compiler plugin with Java 17 support -->
+      <!-- Java Compiler Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
+        <version>3.10.1</version>
         <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
           <encoding>${project.build.sourceEncoding}</encoding>
         </configuration>
       </plugin>
-      
-      <!-- WAR plugin (optional but recommended) -->
+
+      <!-- WAR Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>3.1</version>
+        <version>3.4.0</version>
       </plugin>
     </plugins>
   </build>
@@ -68,11 +71,11 @@
   </distributionManagement>
 
   <pluginRepositories>
-    <!-- Updated Maven Central URL to HTTPS -->
     <pluginRepository>
       <id>maven-central</id>
       <name>Maven Central</name>
       <url>https://repo.maven.apache.org/maven2</url>
     </pluginRepository>
   </pluginRepositories>
+
 </project>
